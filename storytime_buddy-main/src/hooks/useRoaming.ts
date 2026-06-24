@@ -31,15 +31,15 @@ export function useRoaming(opts: {
       const maxX = stage.width - size.w - padX;
       const minY = padTop;
       // bottom limit = top of avoid rect (minus small gap), or stage bottom
-      const avoidTopLocal = avoidRect
-        ? avoidRect.top - stage.top - 12
-        : stage.height - padX;
+      const avoidTopLocal = avoidRect ? avoidRect.top - stage.top - 12 : stage.height - padX;
+
       const maxY = Math.max(minY + 1, avoidTopLocal - size.h);
 
       if (maxX <= minX || maxY <= minY) return;
 
       // Try up to 8 picks that don't overlap avoid rect (defense in depth)
-      let x = minX, y = minY;
+      let x = minX,
+        y = minY;
       for (let i = 0; i < 8; i++) {
         x = minX + Math.random() * (maxX - minX);
         y = minY + Math.random() * (maxY - minY);

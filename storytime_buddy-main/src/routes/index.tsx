@@ -8,11 +8,14 @@ import { STORY_TEXT, QUIZ } from "@/data/story";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-      meta: [
+    meta: [
       { title: "Storytime Buddy — Peblo" },
       { name: "description", content: "A storytelling buddy for curious kids." },
       { property: "og:title", content: "Storytime Buddy" },
-      { property: "og:description", content: "Listen to a magical story and play a quiz with Pip the Robot." },
+      {
+        property: "og:description",
+        content: "Listen to a magical story and play a quiz with Pip the Robot.",
+      },
     ],
   }),
   component: Index,
@@ -183,6 +186,7 @@ function Index() {
       ))}
 
       {/* Sparkles */}
+
       {sparkles.map((s) => (
         <span
           key={s.id}
@@ -206,18 +210,12 @@ function Index() {
       <header className="relative z-10 pt-6 text-center px-4">
         <h1 className="title-fancy">
           {"Storytime Buddy".split("").map((ch, i) => (
-            <span
-              key={i}
-              className="ltr"
-              style={{ animationDelay: `${i * 0.08}s` }}
-            >
+            <span key={i} className="ltr" style={{ animationDelay: `${i * 0.08}s` }}>
               {ch === " " ? "\u00A0" : ch}
             </span>
           ))}
         </h1>
-        <p className="subtitle-fancy mt-2 text-base">
-          ✨ A magical tale with Pip the Robot ✨
-        </p>
+        <p className="subtitle-fancy mt-2 text-base">✨ A magical tale with Pip the Robot ✨</p>
       </header>
 
       {/* Stage with roaming robot */}
@@ -232,9 +230,8 @@ function Index() {
         <div ref={cardRef} className="glass mx-auto max-w-md rounded-[2rem] p-5">
           {!showQuiz ? (
             <>
-              <p className="text-base leading-relaxed text-[oklch(0.25_0.08_290)]">
-                {STORY_TEXT}
-              </p>
+              <p className="text-base leading-relaxed text-[oklch(0.25_0.08_290)]">{STORY_TEXT}</p>
+
               <button
                 onClick={readStory}
                 disabled={tts === "loading" || tts === "speaking"}
@@ -259,9 +256,8 @@ function Index() {
             </>
           ) : (
             <div className="reveal">
-              <h2 className="text-lg font-bold text-[oklch(0.3_0.12_290)]">
-                {question.question}
-              </h2>
+              <h2 className="text-lg font-bold text-[oklch(0.3_0.12_290)]">{question.question}</h2>
+
               <div className="mt-4 grid grid-cols-2 gap-3">
                 {question.options.map((opt) => {
                   const isSel = selected === opt;

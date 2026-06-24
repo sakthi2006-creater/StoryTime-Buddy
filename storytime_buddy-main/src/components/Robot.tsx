@@ -48,7 +48,15 @@ export const Robot = memo(function Robot({ mood }: { mood: Mood }) {
       </g>
 
       {/* antenna */}
-      <line x1="90" y1="48" x2="90" y2="62" stroke="#9a6cff" strokeWidth="3.5" strokeLinecap="round" />
+      <line
+        x1="90"
+        y1="48"
+        x2="90"
+        y2="62"
+        stroke="#9a6cff"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
       <circle cx="90" cy="46" r="5" fill="#ffd23f">
         <animate attributeName="r" values="4;6;4" dur="1.4s" repeatCount="indefinite" />
       </circle>
@@ -65,18 +73,66 @@ export const Robot = memo(function Robot({ mood }: { mood: Mood }) {
 
       {/* eyes */}
       <g>
-        <ellipse cx="72" cy="94" rx="11" ry="13" fill="#ffffff" stroke="#1f1147" strokeWidth="1.5" />
-        <ellipse cx="108" cy="94" rx="11" ry="13" fill="#ffffff" stroke="#1f1147" strokeWidth="1.5" />
+        <ellipse
+          cx="72"
+          cy="94"
+          rx="11"
+          ry="13"
+          fill="#ffffff"
+          stroke="#1f1147"
+          strokeWidth="1.5"
+        />
+        <ellipse
+          cx="108"
+          cy="94"
+          rx="11"
+          ry="13"
+          fill="#ffffff"
+          stroke="#1f1147"
+          strokeWidth="1.5"
+        />
         <g className="eye">
-          <circle cx={mood === "sad" ? 70 : 73} cy={mood === "sad" ? 98 : 96} r="5.5" fill="#1f1147" />
-          <circle cx={mood === "sad" ? 106 : 109} cy={mood === "sad" ? 98 : 96} r="5.5" fill="#1f1147" />
-          <circle cx={mood === "sad" ? 72 : 75} cy={mood === "sad" ? 96 : 93} r="2" fill="#ffffff" />
-          <circle cx={mood === "sad" ? 108 : 111} cy={mood === "sad" ? 96 : 93} r="2" fill="#ffffff" />
+          <circle
+            cx={mood === "sad" ? 70 : 73}
+            cy={mood === "sad" ? 98 : 96}
+            r="5.5"
+            fill="#1f1147"
+          />
+          <circle
+            cx={mood === "sad" ? 106 : 109}
+            cy={mood === "sad" ? 98 : 96}
+            r="5.5"
+            fill="#1f1147"
+          />
+          <circle
+            cx={mood === "sad" ? 72 : 75}
+            cy={mood === "sad" ? 96 : 93}
+            r="2"
+            fill="#ffffff"
+          />
+          <circle
+            cx={mood === "sad" ? 108 : 111}
+            cy={mood === "sad" ? 96 : 93}
+            r="2"
+            fill="#ffffff"
+          />
         </g>
         {mood === "sad" && (
           <>
-            <path d="M62 82 Q72 78 82 84" stroke="#1f1147" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-            <path d="M98 84 Q108 78 118 82" stroke="#1f1147" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            <path
+              d="M62 82 Q72 78 82 84"
+              stroke="#1f1147"
+              strokeWidth="2.5"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M98 84 Q108 78 118 82"
+              stroke="#1f1147"
+              strokeWidth="2.5"
+              fill="none"
+              strokeLinecap="round"
+            />
           </>
         )}
       </g>
@@ -98,10 +154,22 @@ export const Robot = memo(function Robot({ mood }: { mood: Mood }) {
         </ellipse>
       )}
       {mood === "sad" && (
-        <path d="M78 124 Q90 114 102 124" stroke="#1f1147" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path
+          d="M78 124 Q90 114 102 124"
+          stroke="#1f1147"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+        />
       )}
       {mood === "idle" && (
-        <path d="M78 118 Q90 128 102 118" stroke="#1f1147" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path
+          d="M78 118 Q90 128 102 118"
+          stroke="#1f1147"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+        />
       )}
 
       {/* neck + body */}
